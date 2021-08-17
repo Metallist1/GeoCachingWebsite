@@ -1,1 +1,223 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  body {
+    overflow: visible;
+  }
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+.shade{
+  display: block;
+  position: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.container-fluid{
+  max-width: none;
+}
+.brick {
+  display: inline-block;
+  width: 100%;
+  margin: 1.5em 0 1.5em;
+  padding: 2em 3em;
+  position: relative;
+  background-color: rgba(256, 256, 256, 1);
+  box-shadow: 1px 1px 10px 1px #9a9a9a
+}
+.block {
+  font-size: 1rem !important;
+  margin: .3em;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.forgot {
+  display: block;
+  margin: 0 auto 1rem;
+  cursor: pointer;
+}
+.link-signup {
+  display: block;
+  // margin-top: 1rem
+  text-decoration: underline;
+}
+.app-login{
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+.error-text{
+  font-size: 1.2rem;
+  color: #dc3545;
+}
+.register {
+  display: inline-block;
+  text-align: left;
+  padding-right: 5px;
+  width: 1.5em;
+}
+.help-text{
+  font-size: 65%
+}
+.passwordInput{
+  flex-flow: row
+}
+.eye-design {
+  border: 0;
+  color: #000 !important;
+  transition: none !important ;
+}
+.eye-design:hover {
+  background-color: transparent !important;
+  color: #000 !important;
+}
+.no-borders {
+  border-radius: 0;
+}
+.login-button{
+  width: 100%;
+  border-radius: 0;
+}
+
+
+
+form {
+  --text-color: #afafaf;
+}
+.field {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px dashed var(--text-color);
+  margin: 1rem auto 2rem;
+  transition: 500ms;
+}
+.label {
+  color:var(--text-color);
+  font-size: 1.2rem;
+}
+.input {
+  outline: none;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  padding: 0.25rem 0;
+  background: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: border 500ms;
+}
+.input:valid {
+  color: black;
+}
+.input:invalid {
+  color: orangered;
+}
+/* Border animation */
+.field::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #10707f;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  opacity: 0;
+  transition: all 500ms ease;
+  top: 2px;
+}
+
+.errored{
+  background: orangered !important;
+}
+.field:focus-within {
+  border-color: transparent;
+}
+.field:focus-within::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+/* Label animation */
+.label {
+  z-index: -1;
+  position: absolute;
+  transform: translateY(-2rem);
+  transform-origin: 0%;
+  transition: transform 400ms;
+}
+.field:focus-within .label,
+.input:not(:placeholder-shown) + .label {
+  transform: scale(0.8) translateY(-5rem);
+  opacity: 1;
+}
+/* Strength Meter */
+.strength {
+  display: flex;
+  height: 20px;
+  width: 100%;
+}
+.bar {
+  margin-right: 5px;
+  height: 100%;
+  width: 25%;
+  transition: box-shadow 500ms;
+  box-shadow: inset 0px 20px #1f1f1f;
+}
+.bar-show {
+  box-shadow: none;
+}
+
+.bar:last-child {
+  margin-right: 0;
+}
+.strength-text {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+.toggle-password {
+  position: absolute;
+  cursor: help;
+  font-size: 0.8rem;
+  right: 0.25rem;
+  bottom: 0.5rem;
+}
+
+
+.small-letters{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.login-formas{
+  position: absolute;
+  width: 100%;
+}
+
+.botton-color{
+  background-color: rgb(32,194,14) !important;
+  border-color: rgb(32,194,14) !important;
+}
+
+ol.o {list-style-type: upper-alpha;}

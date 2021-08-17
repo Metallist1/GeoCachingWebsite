@@ -1,0 +1,48 @@
+
+<div class="login-formas" [ngStyle]="{'top.px': divStyle}">
+  <div class="outside">
+
+    <div class="container-fluid shade"></div>
+    <div class="container-fluid">
+      <div class="col-md-10 offset-md-1">
+        <div class="row highlight">
+          <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+            <div class="brick">
+              <h2 class="text-center text-uppercase">Login</h2>
+              <form [formGroup]="loginDetail" (ngSubmit)="signIn()" novalidate>
+
+                <div class="field">
+                  <input type="text" name="email" class="input small-letters" placeholder="" formControlName="email" />
+                  <label for="email" class="label">Username</label>
+                </div>
+
+                <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+                  <li *ngIf="f.email.errors.minlength" class="error-text">  Username must be at least 5 characters</li>
+                  <li *ngIf="f.email.errors.maxlength" class="error-text">  Username must be no more than 100 characters</li>
+                  <li *ngIf="f.email.errors.required" class="error-text">  Username is required </li>
+                </ul>
+
+                <div class="field">
+                  <input [type]="fieldTextType ? 'text' : 'password'" name="email" class="input small-letters" formControlName="pwd" placeholder=""/>
+                  <label for="password" class="label">Password</label>
+                  <span class="btn btn-outline-secondary eye-design no-borders toggle-password" (click)="toggleFieldTextType()">
+                  <i class="far" [ngClass]="{'fa-eye-slash': !fieldTextType,'fa-eye': fieldTextType}"></i>
+            </span>
+                </div>
+
+                <ul *ngIf="f.pwd.errors && (f.pwd.dirty || f.pwd.touched)">
+                  <li *ngIf="f.pwd.errors.minlength" class="error-text">  Password must be at least 5 characters</li>
+                  <li *ngIf="f.pwd.errors.maxlength" class="error-text">  Password must be no more than 20 characters</li>
+                  <li *ngIf="f.pwd.errors.required" class="error-text">  Password is required </li>
+                </ul>
+
+                <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Log in">
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
