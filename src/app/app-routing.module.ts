@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./login/login.component";
-import {GuardService} from "./shared/states/auth/login.guard";
+import {GuardService} from "./shared/states/auth/_guard/login.guard";
 import {SecretQuestionComponent} from "./secret-question/secret-question.component";
 import {FirstQuestionComponent} from "./first-question/first-question.component";
 import {SecondQuestionComponent} from "./second-question/second-question.component";

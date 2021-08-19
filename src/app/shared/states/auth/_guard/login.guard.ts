@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from "@angular/router";
-import {AdminAuthState} from "./login.state";
+import {AdminAuthState} from "../login.state";
 import {Observable} from "rxjs";
-import {User} from "./user";
+import {User} from "../entities/user";
 import {Select} from "@ngxs/store";
 
 @Injectable({

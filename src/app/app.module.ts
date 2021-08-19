@@ -20,6 +20,9 @@ import { SevenQuestionComponent } from './seven-question/seven-question.componen
 import { EightQuestionComponent } from './eight-question/eight-question.component';
 import { NineQuestionComponent } from './nine-question/nine-question.component';
 import {AngularFireModule} from "@angular/fire";
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
+import {TeamsState} from "./shared/states/teams/teams.state";
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import {AngularFireModule} from "@angular/fire";
     SixQuestionComponent,
     SevenQuestionComponent,
     EightQuestionComponent,
-    NineQuestionComponent
+    NineQuestionComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +47,11 @@ import {AngularFireModule} from "@angular/fire";
     NgbModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    NgxsModule.forRoot([ AdminAuthState], {
+    NgxsModule.forRoot([ AdminAuthState, TeamsState], {
       developmentMode: !environment.production
+    }),
+    NgxsStoragePluginModule.forRoot({
+      key: ['team']
     }),
   ],
   providers: [],

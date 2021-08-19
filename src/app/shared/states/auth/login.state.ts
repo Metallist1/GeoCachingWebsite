@@ -1,5 +1,5 @@
 import {Action, Selector, State, StateContext} from "@ngxs/store";
-import {User} from "./user";
+import {User} from "./entities/user";
 import {Injectable} from "@angular/core";
 import {LoginAdmin} from "./login.action";
 

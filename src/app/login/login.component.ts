@@ -6,7 +6,7 @@ import {Actions, ofActionSuccessful, Select, Store} from "@ngxs/store";
 import {LoginAdmin} from "../shared/states/auth/login.action";
 import {Observable, Subject} from "rxjs";
 import {AdminAuthState} from "../shared/states/auth/login.state";
-import {User} from "../shared/states/auth/user";
+import {User} from "../shared/states/auth/entities/user";
 
 @Component({
   selector: 'app-login',
