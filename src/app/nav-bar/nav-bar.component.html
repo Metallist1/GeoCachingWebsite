@@ -1,1 +1,55 @@
-<p>nav-bar works!</p>
+<nav class="navbar">
+  <ul class="navbar-nav">
+    <li class="logo">
+      <a
+        [routerLink]="['']"
+        class="nav-link">
+        <span class="link-text logo-text">THE SYNDICATE</span>
+        <fa-icon [icon]="faAngleDoubleRight" size="3x"></fa-icon>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        [routerLink]="['/']"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        class="nav-link">
+        <fa-icon class="fa-user" [icon]="faHome" size="2x"></fa-icon>
+        <span class="link-text">INTRODUCTION</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        [routerLink]="['/teams']"
+        [routerLinkActive]="['active']"
+        class="nav-link">
+        <fa-icon class="fa-user" [icon]="faUser" size="2x"></fa-icon>
+        <span class="link-text">TEAMS</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a
+        [routerLink]="['/questions']"
+        [routerLinkActive]="['active']"
+        class="nav-link">
+        <fa-icon [icon]="faQuestion" size="2x" ></fa-icon>
+        <span class="link-text">QUESTIONS</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        [routerLink]="['/IKNOWTHETRUTH']"
+        [routerLinkActive]="['active']"
+        class="nav-link">
+        <fa-icon [icon]="faBug" size="2x"></fa-icon>
+          <span class="glitch link-text" data-text="H@LPM3">
+            H@LP M3
+          </span>
+      </a>
+    </li>
+
+  </ul>
+</nav>

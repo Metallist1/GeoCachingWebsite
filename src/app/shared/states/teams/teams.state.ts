@@ -2,6 +2,7 @@ import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
 import {Team} from "./entities/team";
 import {CreateTeam} from "./teams.action";
+import {TeamsService} from "./teams.service";
 
 export class TeamsStateModel {
   // @ts-ignore
@@ -18,7 +19,7 @@ export class TeamsStateModel {
 @Injectable()
 export class TeamsState {
 
-  constructor(    private teamService: TeamService,) {
+  constructor(    private teamService: TeamsService,) {
   }
 
   @Selector()

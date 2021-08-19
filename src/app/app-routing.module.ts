@@ -11,11 +11,25 @@ import {FifthQuestionComponent} from "./fifth-question/fifth-question.component"
 import {SixQuestionComponent} from "./six-question/six-question.component";
 import {SevenQuestionComponent} from "./seven-question/seven-question.component";
 import {EightQuestionComponent} from "./eight-question/eight-question.component";
-import {NineQuestionComponent} from "./nine-question/nine-question.component";
+import {IntroComponent} from "./intro/intro.component";
+import {TeamCreateComponent} from "./team-create/team-create.component";
+import {QuestionViewComponent} from "./question-view/question-view.component";
 
 const routes: Routes = [
   {
     path: '',
+    component: IntroComponent,
+  },
+  {
+    path: 'teams',
+    component: TeamCreateComponent,
+  },
+  {
+    path: 'questions',
+    component: QuestionViewComponent,
+  },
+  {
+    path: 'IKNOWTHETRUTH',
     component: LoginComponent,
   },
   {
@@ -46,15 +60,9 @@ const routes: Routes = [
     path: '25bxmMg20a',
     component: SevenQuestionComponent,
   },
-
   {
     path: '1JbZbIR97U',
     component: EightQuestionComponent,
-  },
-
-  {
-    path: 'jLXQ8yPLcG',
-    component: NineQuestionComponent,
   },
   {
     path: 'secret',

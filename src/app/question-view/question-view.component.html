@@ -1,0 +1,60 @@
+<div class="login-formas" [ngStyle]="{'top.px': divStyle}">
+  <div class="outside">
+
+    <div class="container-fluid shade"></div>
+    <div class="container-fluid">
+      <div class="col-md-10 offset-md-1">
+        <div class="row highlight">
+          <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+            <div class="brick">
+              <h2 class="text-center text-uppercase"> Get next location</h2>
+              <form [formGroup]="locationForm" (ngSubmit)="getLocation()" novalidate>
+
+                <div class="field">
+                  <input type="text" name="email" class="input small-letters" placeholder="Location Code" formControlName="email" />
+                  <label for="email" class="label">Location code</label>
+                </div>
+
+                <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+                  <li *ngIf="f.email.errors.minlength" class="error-text">  Code must be at least 1 characters</li>
+                  <li *ngIf="f.email.errors.maxlength" class="error-text">  Code must be no more than 100 characters</li>
+                  <li *ngIf="f.email.errors.required" class="error-text">  Code is required </li>
+                </ul>
+                <input type="submit" [disabled]="!(f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Get location">
+
+                <div class="field" *ngIf="showCords">
+                  Cordinates : {{this.cords | async}}
+                  Objective: {{this.objective | async}}
+                </div>
+
+                <div class="field" *ngIf="error">
+                  The code is incorrect
+                </div>
+
+              </form>
+            </div>
+
+            <div class="brick">
+              <h2 class="text-center text-uppercase"> Get next question</h2>
+              <form [formGroup]="questionForm" (ngSubmit)="getQuestion()" novalidate>
+
+                <div class="field">
+                  <input type="text" name="email" class="input small-letters" placeholder="Question Code" formControlName="email" />
+                  <label for="email" class="label">Question code</label>
+                </div>
+
+                <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+                  <li *ngIf="f.email.errors.minlength" class="error-text">  Code must be at least 1 characters</li>
+                  <li *ngIf="f.email.errors.maxlength" class="error-text">  Code must be no more than 100 characters</li>
+                  <li *ngIf="f.email.errors.required" class="error-text">  Code is required </li>
+                </ul>
+                <input type="submit" [disabled]="!(f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Get Question">
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

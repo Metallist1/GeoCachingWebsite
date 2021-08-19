@@ -10,7 +10,8 @@ export const environment = {
     projectId: "geocaching-b04b9",
     storageBucket: "geocaching-b04b9.appspot.com",
     messagingSenderId: "743096754501",
-    appId: "1:743096754501:web:cb1f936fdf1d10ab205e2c"
+    appId: "1:743096754501:web:cb1f936fdf1d10ab205e2c",
+    databaseURL: "https://geocaching-b04b9-default-rtdb.europe-west1.firebasedatabase.app/"
   },
 };
 

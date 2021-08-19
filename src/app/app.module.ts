@@ -18,11 +18,15 @@ import { FifthQuestionComponent } from './fifth-question/fifth-question.componen
 import { SixQuestionComponent } from './six-question/six-question.component';
 import { SevenQuestionComponent } from './seven-question/seven-question.component';
 import { EightQuestionComponent } from './eight-question/eight-question.component';
-import { NineQuestionComponent } from './nine-question/nine-question.component';
 import {AngularFireModule} from "@angular/fire";
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {NgxsStoragePluginModule} from "@ngxs/storage-plugin";
 import {TeamsState} from "./shared/states/teams/teams.state";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { IntroComponent } from './intro/intro.component';
+import { TeamCreateComponent } from './team-create/team-create.component';
+import {LocationState} from "./shared/states/location/location.state";
+import { QuestionViewComponent } from './question-view/question-view.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +41,10 @@ import {TeamsState} from "./shared/states/teams/teams.state";
     SixQuestionComponent,
     SevenQuestionComponent,
     EightQuestionComponent,
-    NineQuestionComponent,
-    NavBarComponent
+    NavBarComponent,
+    IntroComponent,
+    TeamCreateComponent,
+    QuestionViewComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +52,9 @@ import {TeamsState} from "./shared/states/teams/teams.state";
     ReactiveFormsModule,
     NgbModule,
 
+    FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    NgxsModule.forRoot([ AdminAuthState, TeamsState], {
+    NgxsModule.forRoot([ AdminAuthState, TeamsState, LocationState], {
       developmentMode: !environment.production
     }),
     NgxsStoragePluginModule.forRoot({

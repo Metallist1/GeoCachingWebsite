@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./secret-question.component.scss']
 })
 export class SecretQuestionComponent implements OnInit {
-  divStyle = 200;
+  divStyle = 50;
   constructor() { }
 
   ngOnInit(): void {
