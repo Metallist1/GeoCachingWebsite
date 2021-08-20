@@ -24,7 +24,9 @@
 
                 <div class="field" *ngIf="showCords">
                   Cordinates : {{this.cords | async}}
+                  <p>
                   Objective: {{this.objective | async}}
+                  </p>
                 </div>
 
                 <div class="field" *ngIf="error">
@@ -43,12 +45,16 @@
                   <label for="email" class="label">Question code</label>
                 </div>
 
-                <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
-                  <li *ngIf="f.email.errors.minlength" class="error-text">  Code must be at least 1 characters</li>
-                  <li *ngIf="f.email.errors.maxlength" class="error-text">  Code must be no more than 100 characters</li>
-                  <li *ngIf="f.email.errors.required" class="error-text">  Code is required </li>
+                <ul *ngIf="g.email.errors && (g.email.dirty || g.email.touched)">
+                  <li *ngIf="g.email.errors.minlength" class="error-text">  Code must be at least 1 characters</li>
+                  <li *ngIf="g.email.errors.maxlength" class="error-text">  Code must be no more than 100 characters</li>
+                  <li *ngIf="g.email.errors.required" class="error-text">  Code is required </li>
                 </ul>
-                <input type="submit" [disabled]="!(f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Get Question">
+                <input type="submit" [disabled]="!(g.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Get Question">
+
+                <div class="field" *ngIf="errorQ">
+                  There is no such question
+                </div>
 
               </form>
             </div>

@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Select, Store} from "@ngxs/store";
-import {first} from "rxjs/operators";
+import {Actions, ofActionErrored, ofActionSuccessful, Select, Store} from "@ngxs/store";
+import {first, takeUntil} from "rxjs/operators";
 import {CreateTeam} from "../shared/states/teams/teams.action";
 import {AdminAuthState} from "../shared/states/auth/login.state";
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {User} from "../shared/states/auth/entities/user";
 import {Team} from "../shared/states/teams/entities/team";
 import {TeamsState} from "../shared/states/teams/teams.state";
+import {GetNextLocation} from "../shared/states/location/location.action";
 
 @Component({
   selector: 'app-team-create',
   templateUrl: './team-create.component.html',
   styleUrls: ['./team-create.component.scss']
 })
-export class TeamCreateComponent implements OnInit {
+export class TeamCreateComponent implements OnInit, OnDestroy {
   isLoading = false;
   // @ts-ignore
   teamForm: FormGroup;
@@ -27,6 +28,8 @@ export class TeamCreateComponent implements OnInit {
   @Select(TeamsState.getTeam) team: Observable<Team>;
   // @ts-ignore
   currentT: Team;
+  error = false;
+  private ngUnsubscribe = new Subject();
 
   possibleFrazes = [
     'Waiting for something to happen?',
@@ -45,11 +48,13 @@ export class TeamCreateComponent implements OnInit {
     'Once more the developers shall fix the broken code, and we shall have peace.',
     'It’s over bug! I have the High Ground!',
     'Remind yourself that overconfidence is a slow and insidious killer.',
+    'Doing unit tests almost makes us wish for a nuclear winter.',
   ];
 
   constructor(
     private fb: FormBuilder,
-    private store: Store,) {
+    private store: Store,
+    private actions$: Actions) {
     // @ts-ignore
     this.team.subscribe(
       (data) => {
@@ -59,6 +64,14 @@ export class TeamCreateComponent implements OnInit {
         }
       });
     this.pickFraze();
+
+    this.actions$.pipe(ofActionSuccessful(CreateTeam),
+      takeUntil(this.ngUnsubscribe)).subscribe(() => {
+    });
+    this.actions$.pipe(ofActionErrored(CreateTeam),
+      takeUntil(this.ngUnsubscribe)).subscribe(() => {
+      this.error = true;
+    });
   }
 
   ngOnInit(): void {
@@ -67,6 +80,12 @@ export class TeamCreateComponent implements OnInit {
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
     });
   }
+
+  ngOnDestroy(): any{
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
   get f(): any { return this.teamForm.controls; }
 
   createTeam(): any{

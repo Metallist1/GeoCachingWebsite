@@ -1,6 +1,6 @@
 import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
-import {GetNextLocation} from "./location.action";
+import {DeleteQuestion, GetNextLocation, GetNextQuestion} from "./location.action";
 import {LocationService} from "./location.service";
 
 export class LocationStateModel {
@@ -8,13 +8,16 @@ export class LocationStateModel {
   cord: string;
   // @ts-ignore
   objective: string;
+  // @ts-ignore
+  question: string;
 }
 
 @State<LocationStateModel>({
   name: 'location',
   defaults: {
     cord: '',
-    objective: ''
+    objective: '',
+    question: ''
   }
 })
 @Injectable()
@@ -29,6 +32,11 @@ export class LocationState {
   }
 
   @Selector()
+  static getQuestion(state: LocationStateModel): any {
+    return state.question;
+  }
+
+  @Selector()
   static getLocation(state: LocationStateModel): any {
     return state.objective;
   }
@@ -37,14 +45,36 @@ export class LocationState {
   getNextLocation({getState, setState}: StateContext<LocationStateModel>, {string}: GetNextLocation): any {
     // @ts-ignore
     return this.locationService.GetNextLocation(string).then((result) => {
-      console.log(result);
       const state = getState();
       setState({
         ...state,
         cord: result.cords,
-        objective: result.cords,
+        objective: result.objective,
       });
     });
 
+  }
+
+  @Action(GetNextQuestion)
+  getNextQuestion({getState, setState}: StateContext<LocationStateModel>, {string}: GetNextQuestion): any {
+    // @ts-ignore
+    return this.locationService.GetNextQuestion(string).then((result) => {
+      const state = getState();
+      setState({
+        ...state,
+        question: result
+      });
+    });
+
+  }
+
+  @Action(DeleteQuestion)
+  deleteQuestion({getState, setState}: StateContext<LocationStateModel>): any {
+    // @ts-ignore
+      const state = getState();
+      setState({
+        ...state,
+        question: ''
+      });
   }
 }

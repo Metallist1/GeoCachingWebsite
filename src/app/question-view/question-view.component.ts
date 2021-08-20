@@ -7,7 +7,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoginAdmin} from "../shared/states/auth/login.action";
 import {first, takeUntil} from "rxjs/operators";
 import {Router} from "@angular/router";
-import {GetNextLocation} from "../shared/states/location/location.action";
+import {DeleteQuestion, GetNextLocation, GetNextQuestion} from "../shared/states/location/location.action";
 import {LocationState} from "../shared/states/location/location.state";
 
 @Component({
@@ -29,7 +29,11 @@ export class QuestionViewComponent implements OnInit, OnDestroy {
   // @ts-ignore
   submitted = false;
   showCords = false;
+
+  // @ts-ignore
+  @Select(LocationState.getQuestion) question: Observable<string>;
   error = false;
+  errorQ = false;
 
   constructor(    private fb: FormBuilder,
                   private router: Router,
@@ -43,6 +47,31 @@ export class QuestionViewComponent implements OnInit, OnDestroy {
       takeUntil(this.ngUnsubscribe)).subscribe(() => {
       this.showCords = false;
       this.error = true;
+    });
+
+    // @ts-ignore
+    this.question.subscribe(
+      (data) => {
+        console.log(data);
+        if (data) {
+          this.store.dispatch(new DeleteQuestion())
+            .pipe(first())
+            .subscribe(
+              data => {
+
+              },
+              error => {
+              });
+          this.router.navigate(['/' + data]);
+        }
+      });
+
+    this.actions$.pipe(ofActionSuccessful(GetNextQuestion),
+      takeUntil(this.ngUnsubscribe)).subscribe(() => {
+    });
+    this.actions$.pipe(ofActionErrored(GetNextQuestion),
+      takeUntil(this.ngUnsubscribe)).subscribe(() => {
+      this.errorQ = true;
     });
   }
 
@@ -77,11 +106,19 @@ export class QuestionViewComponent implements OnInit, OnDestroy {
         });
   }
 
-  getQuestion() {
+  getQuestion(): any{
+    this.errorQ = false;
     this.submitted = true;
     if (this.questionForm.invalid) {
       return;
     }
-    this.router.navigate(['/' + this.questionForm.value.email]);
+    this.store.dispatch(new GetNextQuestion(this.questionForm.value.email))
+      .pipe(first())
+      .subscribe(
+        data => {
+
+        },
+        error => {
+        });
   }
 }

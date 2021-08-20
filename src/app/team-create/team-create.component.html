@@ -35,7 +35,9 @@
                 </ul>
 
                 <input type="submit" [disabled]="!(f.pwd.errors === null && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Create team">
-
+                <div class="field" *ngIf="error">
+                  Your Secret code is invalid
+                </div>
               </form>
             </div>
             <div class="brick" *ngIf="createdTeam">
