@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecretQuestionComponent implements OnInit {
   divStyle = 50;
+  question = 9;
+  answerArray = ['A','B','C','D','E','F']
   constructor() { }
 
   ngOnInit(): void {

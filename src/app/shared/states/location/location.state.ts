@@ -1,6 +1,12 @@
 import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
-import {DeleteQuestion, GetNextLocation, GetNextQuestion} from "./location.action";
+import {
+  AnswerQuestion,
+  CheckIfQuestionIsAnswered,
+  DeleteQuestion,
+  GetNextLocation,
+  GetNextQuestion
+} from "./location.action";
 import {LocationService} from "./location.service";
 
 export class LocationStateModel {
@@ -10,6 +16,8 @@ export class LocationStateModel {
   objective: string;
   // @ts-ignore
   question: string;
+  // @ts-ignore
+  questionAnswerCode: string;
 }
 
 @State<LocationStateModel>({
@@ -17,7 +25,8 @@ export class LocationStateModel {
   defaults: {
     cord: '',
     objective: '',
-    question: ''
+    question: '',
+    questionAnswerCode: ''
   }
 })
 @Injectable()
@@ -34,6 +43,11 @@ export class LocationState {
   @Selector()
   static getQuestion(state: LocationStateModel): any {
     return state.question;
+  }
+
+  @Selector()
+  static getNextSeriesOfLocations(state: LocationStateModel): any {
+    return state.questionAnswerCode;
   }
 
   @Selector()
@@ -76,5 +90,28 @@ export class LocationState {
         ...state,
         question: ''
       });
+  }
+
+  @Action(AnswerQuestion)
+  answerQuestion({getState, setState}: StateContext<LocationStateModel>, {answer, specialToken, questionID}: AnswerQuestion): any {
+    return this.locationService.AnswerQuestion(answer, specialToken, questionID).then((result) => {
+      console.log(result);
+      const state = getState();
+      setState({
+        ...state,
+        questionAnswerCode: result
+      });
+    });
+  }
+
+  @Action(CheckIfQuestionIsAnswered)
+  checkIfQuestionIsAnswered({getState, setState}: StateContext<LocationStateModel>, {specialToken, questionID}: CheckIfQuestionIsAnswered): any {
+    return this.locationService.CheckIfQuestionIsAnswered(specialToken, questionID).then((result) => {
+      const state = getState();
+      setState({
+        ...state,
+        questionAnswerCode: result
+      });
+    });
   }
 }

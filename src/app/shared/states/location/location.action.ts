@@ -9,3 +9,14 @@ export class GetNextQuestion {
 export class DeleteQuestion {
   static readonly type = '[Auth] DeleteQuestion';
 }
+
+export class AnswerQuestion {
+  static readonly type = '[Auth] AnswerQuestion';
+  constructor(public specialToken: string, public answer: string, public questionID: number ) {}
+}
+
+export class CheckIfQuestionIsAnswered {
+  static readonly type = '[Auth] AnswerQuestion';
+  constructor(public specialToken: string, public questionID: number ) {}
+}
+

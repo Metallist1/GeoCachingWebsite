@@ -76,7 +76,7 @@ export class TeamCreateComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.teamForm = this.fb.group({
-      email : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(200)])],
+      email : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
       pwd : ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(20)])],
     });
   }

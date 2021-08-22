@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forth-question.component.scss']
 })
 export class ForthQuestionComponent implements OnInit {
-  divStyle = 200;
+  divStyle = 50;
+  question = 4;
+  answerArray = ['A','B','C','D','E']
   constructor() { }
 
   ngOnInit(): void {

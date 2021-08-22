@@ -1,0 +1,29 @@
+<div *ngIf="!answeredQuestion">
+  <div>
+    <select [(ngModel)]='selectedOption' class="select_menu">
+      <option value="default" disabled>Select an answer</option>
+      <option *ngFor="let answer of  answerArray" [ngValue]="answer">
+        {{ answer }}
+      </option>
+    </select>
+  </div>
+  <form [formGroup]="teamForm" (ngSubmit)="answerQuestion()" novalidate>
+    <div class="field">
+      <input type="text" name="email" class="input small-letters" placeholder="Team code" formControlName="email" />
+      <label for="email" class="label">Team name</label>
+    </div>
+    <ul *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
+      <li *ngIf="f.email.errors.minlength" class="error-text">  Team code must be at least 5 characters</li>
+      <li *ngIf="f.email.errors.maxlength" class="error-text">  Team code must be no more than 20 characters</li>
+      <li *ngIf="f.email.errors.required" class="error-text">  Team code is required to answer </li>
+    </ul>
+    <input type="submit" [disabled]="!(selectedOption !== 'default' && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Answer the question">
+    <div class="field" *ngIf="error">
+      Your Secret code is invalid
+    </div>
+  </form>
+</div>
+<div *ngIf="answeredQuestion">
+  {{pickedFraze}}
+  <p>{{nextLoc}}</p>
+</div>

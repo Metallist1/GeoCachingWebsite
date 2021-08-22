@@ -30,6 +30,9 @@ body {
   max-width: none;
 }
 .brick {
+  max-height: 700px;
+  overflow-y: auto;
+  overflow-x: unset;
   display: inline-block;
   width: 100%;
   margin: 1.5em 0 1.5em;
@@ -137,7 +140,7 @@ form {
   display: block;
   height: 4px;
   width: 100%;
-  background: #10707f;
+  background: rgb(32,194,14);
   transform: scaleX(0);
   transform-origin: 0%;
   opacity: 0;
@@ -263,7 +266,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #4429D3;
+  background: rgb(32,194,14);
 }
 
 main {
@@ -468,3 +471,6 @@ main {
   color: white;
 }
 
+ol.o{
+  list-style-type: none !important;
+}

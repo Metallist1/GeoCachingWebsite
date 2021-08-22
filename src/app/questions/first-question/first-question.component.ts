@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-question.component.scss']
 })
 export class FirstQuestionComponent implements OnInit {
-  divStyle = 200;
+  divStyle = 50;
+  question = 1;
+  answerArray = ['A','B','C','D','E','F']
   constructor() { }
 
   ngOnInit(): void {
