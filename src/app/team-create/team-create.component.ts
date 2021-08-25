@@ -3,12 +3,9 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Actions, ofActionErrored, ofActionSuccessful, Select, Store} from "@ngxs/store";
 import {first, takeUntil} from "rxjs/operators";
 import {CreateTeam} from "../shared/states/teams/teams.action";
-import {AdminAuthState} from "../shared/states/auth/login.state";
 import {Observable, Subject} from "rxjs";
-import {User} from "../shared/states/auth/entities/user";
 import {Team} from "../shared/states/teams/entities/team";
 import {TeamsState} from "../shared/states/teams/teams.state";
-import {GetNextLocation} from "../shared/states/location/location.action";
 
 @Component({
   selector: 'app-team-create',
@@ -20,7 +17,7 @@ export class TeamCreateComponent implements OnInit, OnDestroy {
   // @ts-ignore
   teamForm: FormGroup;
   showPwd = false;
-  divStyle = 200;
+  divStyle = 50;
   submitted = false;
   pickedFraze = '';
   createdTeam = false;

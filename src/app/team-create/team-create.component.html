@@ -2,7 +2,7 @@
 <div class="login-formas" [ngStyle]="{'top.px': divStyle}">
   <div class="outside">
 
-    <div class="container-fluid shade"></div>
+    <div class="container-fluid shade">
     <div class="container-fluid">
       <div class="col-md-10 offset-md-1">
         <div class="row highlight">
@@ -54,13 +54,23 @@
                 </p>
                 <p>
                 <p>
-                  We prepared a special Machine learning generated quote for your team to increase motivation and productivity.
+                  Our machine learning algorithm generated a quote for your team to increase motivation and productivity.
                 </p>
                 <p>
-                  Quote :
+                  <strong>
+                    Generated quote:
+                  </strong>
                 </p>
                 <p>
                 {{pickedFraze}}
+                </p>
+                <p>
+                  <strong>
+                    Further instruction:
+                  </strong>
+                </p>
+                <p>
+                    Click the question mark icon on the navigation bar and insert the location code.
                 </p>
               </div>
             </div>
@@ -69,4 +79,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

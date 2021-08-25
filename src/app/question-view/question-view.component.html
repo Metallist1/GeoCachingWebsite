@@ -1,7 +1,7 @@
 <div class="login-formas" [ngStyle]="{'top.px': divStyle}">
   <div class="outside">
 
-    <div class="container-fluid shade"></div>
+    <div class="container-fluid shade">
     <div class="container-fluid">
       <div class="col-md-10 offset-md-1">
         <div class="row highlight">
@@ -24,10 +24,23 @@
 
                 <div class="field" *ngIf="showCords">
                   <p></p>
-                  Coordinates : {{this.cords | async}}
+                  <strong>
+                    Coordinates:
+                  </strong>
+                    {{this.splits[0]}}
+                    {{this.splits[1]}}
                   <p></p>
                   <p>
-                  Objective: {{this.objective | async}}
+                  <strong>
+                    Objective:
+                  </strong>
+                    {{this.objective | async}}
+                  </p>
+                  <p>
+                    <strong>
+                      Discuss:
+                    </strong>
+                    {{this.extra | async}}
                   </p>
                 </div>
 
@@ -65,4 +78,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

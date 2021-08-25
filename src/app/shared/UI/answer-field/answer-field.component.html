@@ -18,12 +18,25 @@
       <li *ngIf="f.email.errors.required" class="error-text">  Team code is required to answer </li>
     </ul>
     <input type="submit" [disabled]="!(selectedOption !== 'default' && f.email.errors === null)" class="btn btn-info text-white login-button botton-color" value="Answer the question">
-    <div class="field" *ngIf="error">
+    <div class="field" *ngIf="error && submitted">
       Your Secret code is invalid
     </div>
   </form>
 </div>
 <div *ngIf="answeredQuestion">
+  <p>
+    <strong>
+      Response:
+    </strong>
+  </p>
   {{pickedFraze}}
-  <p>{{nextLoc}}</p>
+  <p>
+  <p *ngIf="question != 9">
+    <strong>
+      Next location code:
+    </strong>
+  </p>
+  <p *ngIf="question != 9">
+    {{nextLoc}}
+  </p>
 </div>

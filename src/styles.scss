@@ -16,12 +16,16 @@ body {
   body {
     overflow: visible;
   }
+
+  .brick{
+    margin: 1.5em 0 6.5em;
+  }
 }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 .shade{
   display: block;
-  position: fixed;
+  // position: fixed;
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -30,9 +34,6 @@ body {
   max-width: none;
 }
 .brick {
-  max-height: 700px;
-  overflow-y: auto;
-  overflow-x: unset;
   display: inline-block;
   width: 100%;
   margin: 1.5em 0 1.5em;

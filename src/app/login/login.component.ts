@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   // @ts-ignore
   loginDetail: FormGroup;
   showPwd = false;
-  divStyle = 200;
+  divStyle = 50;
   // @ts-ignore
   fieldTextType: boolean;
   submitted = false;

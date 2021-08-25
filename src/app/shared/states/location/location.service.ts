@@ -19,7 +19,8 @@ export class LocationService {
         if (snapshot.val() != null) {
           const cords = snapshot.val().cords;
           const objective = snapshot.val().objective;
-          return {cords, objective} ;
+          const extra = snapshot.val().extra;
+          return {cords, objective, extra} ;
         } else {
           throw new Error('Invalid location');
         }
@@ -107,15 +108,15 @@ export class LocationService {
      }
      if(compareVal < 8){
        const newNumber = Number(locationList[value].id) - 1
-       return 'Next location code: ' +locationList[newNumber].nextLocation;
+       return locationList[newNumber].nextLocation;
      }
      if(compareVal == 8){
        for (let i = 0; i < teamQuestionList.length; i++) {
          if(locationList[i].id != teamQuestionList[i].id){
            if(i == 0){
-             return 'Next location code: ' + locationList[7].nextLocation;
+             return locationList[7].nextLocation;
            }else{
-             return 'Next location code: ' + locationList[i-1].nextLocation;
+             return locationList[i-1].nextLocation;
            }
          }
        }

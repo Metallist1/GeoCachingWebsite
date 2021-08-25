@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro.component.scss']
 })
 export class IntroComponent implements OnInit {
-  divStyle = 200;
+  divStyle = 50;
   constructor() { }
 
   ngOnInit(): void {

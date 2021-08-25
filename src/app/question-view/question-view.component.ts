@@ -19,13 +19,17 @@ export class QuestionViewComponent implements OnInit, OnDestroy {
   // @ts-ignore
   @Select(LocationState.getCords) cords: Observable<string>;
   // @ts-ignore
+  splits:string[];
+  // @ts-ignore
   @Select(LocationState.getLocation) objective: Observable<string>;
+  // @ts-ignore
+  @Select(LocationState.getExtra) extra: Observable<string>;
   private ngUnsubscribe = new Subject();
   // @ts-ignore
   locationForm: FormGroup;
   // @ts-ignore
   questionForm: FormGroup;
-  divStyle = 200;
+  divStyle = 50;
   // @ts-ignore
   submitted = false;
   showCords = false;
@@ -48,6 +52,15 @@ export class QuestionViewComponent implements OnInit, OnDestroy {
       this.showCords = false;
       this.error = true;
     });
+
+    // @ts-ignore
+    this.cords.subscribe(
+      (data) => {
+        console.log(data);
+        if (data) {
+          this.splits = data.split(",");
+        }
+      });
 
     // @ts-ignore
     this.question.subscribe(

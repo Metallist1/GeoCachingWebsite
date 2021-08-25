@@ -33,35 +33,35 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'SsNMYOl4BX',
+    path: '6TI5J',
     component: FirstQuestionComponent,
   },
   {
-    path: 'GHqgKDvvhq',
+    path: 'ISAH5',
     component: SecondQuestionComponent,
   },
   {
-    path: 'JwGMDh5Pl3',
+    path: 'MJB4Z',
     component: ThirdQuestionComponent,
   },
   {
-    path: 'kAEShKtQiB',
+    path: 'CKOMP',
     component: ForthQuestionComponent,
   },
   {
-    path: 'tUjT8yLDwj',
+    path: 'BYM6K',
     component: FifthQuestionComponent,
   },
   {
-    path: 'SL9wBnLdSs',
+    path: 'HD1A5',
     component: SixQuestionComponent,
   },
   {
-    path: '25bxmMg20a',
+    path: '2I7P6',
     component: SevenQuestionComponent,
   },
   {
-    path: '1JbZbIR97U',
+    path: 'BDVT0',
     component: EightQuestionComponent,
   },
   {
@@ -76,7 +76,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

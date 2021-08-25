@@ -17,6 +17,8 @@ export class LocationStateModel {
   // @ts-ignore
   question: string;
   // @ts-ignore
+  extra: string;
+  // @ts-ignore
   questionAnswerCode: string;
 }
 
@@ -25,6 +27,7 @@ export class LocationStateModel {
   defaults: {
     cord: '',
     objective: '',
+    extra: '',
     question: '',
     questionAnswerCode: ''
   }
@@ -46,6 +49,11 @@ export class LocationState {
   }
 
   @Selector()
+  static getExtra(state: LocationStateModel): any {
+    return state.extra;
+  }
+
+  @Selector()
   static getNextSeriesOfLocations(state: LocationStateModel): any {
     return state.questionAnswerCode;
   }
@@ -64,6 +72,7 @@ export class LocationState {
         ...state,
         cord: result.cords,
         objective: result.objective,
+        extra: result.extra
       });
     });
 
