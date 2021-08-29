@@ -1,0 +1,71 @@
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!first"
+          aria-controls="collapseExample">
+    Access Today's customer count
+  </button>
+</p>
+<div #collapse="ngbCollapse"
+     [(ngbCollapse)]="first">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+        32
+      </samp>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapses.toggle()"
+          [attr.aria-expanded]="!second"
+          aria-controls="collapseExample">
+    Access Cameras
+  </button>
+</p>
+
+<div #collapses="ngbCollapse"
+     [(ngbCollapse)]="second">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      You thought it would be interesting to check out.
+      <p></p>
+      You were wrong.
+      <p></p>
+      Its just static.
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapsess.toggle()"
+          [attr.aria-expanded]="!third"
+          aria-controls="collapseExample">
+    Access file "Pwnd.txt"
+  </button>
+</p>
+
+<div #collapsess="ngbCollapse"
+     [(ngbCollapse)]="third">
+  <div class="card">
+    <div class="card-body">
+      Hey 7Eleven IT guys,
+      <p></p>
+      You just got pwned by The Syndicate.
+      <p></p>
+      You might reformat your PCs again but you cant unhack your network
+      <p></p>
+    </div>
+  </div>
+</div>

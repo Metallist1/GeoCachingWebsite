@@ -1,0 +1,93 @@
+<p>
+  <br/>
+  <a href="http://scpfoundation.org/895/feed.html" class="links text-align-left" target="_blank">Access Live Feed Floor -10</a>
+</p>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!first"
+          aria-controls="collapseExample">
+    Access Automated Facility Message
+  </button>
+</p>
+<div #collapse="ngbCollapse"
+     [(ngbCollapse)]="first">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+        <p></p>
+        &lt;&lt;Attention all site personnel. We are experiencing multiple class Keter breaches.
+        Please relocate to the nearest designated survival shelter.&gt;&gt;
+        <p></p>
+        &lt;&lt;Until further notice. All site personnel must turn off their electronic devices until the hazard has been contained. I repeat. All site personnel must turn off their electronic devices until the breach as been contained. MTF Epsilon Crashers 5 are on route. &gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapses.toggle()"
+          [attr.aria-expanded]="!second"
+          aria-controls="collapseExample">
+    Access file "WhatTheFuck.txt"
+  </button>
+</p>
+
+<div #collapses="ngbCollapse"
+     [(ngbCollapse)]="second">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      015: What the FUCK are they doing in our systems.
+      <p></p>
+      020: I am cutting their connection now. We need to locate their point of entrance ASAP.
+      <p></p>
+      015: FFS. Just turn off the power to the IT systems. They cant access the PCs if they arent powered.
+      <p></p>
+      020: Understood.
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapsess.toggle()"
+          [attr.aria-expanded]="!third"
+          aria-controls="collapseExample">
+    Access Known Keter Entity Database
+  </button>
+</p>
+
+<div #collapsess="ngbCollapse"
+     [(ngbCollapse)]="third">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+        <p></p>
+        &lt;&lt;Connection Started&gt;&gt;
+        <p></p>
+        &lt;GET https://geocaching-b04b9.web.app:4200/sockjs-node/info?t=1630194793128 net::ERR_CONNECTION_REFUSED&gt;
+        <p></p>
+        &lt;GET https://geocaching-b04b9.web.app:4200/sockjs-node/info?t=1630194793128 net::ERR_CONNECTION_REFUSED&gt;
+        <p></p>
+        &lt;GET https://geocaching-b04b9.web.app:4200/sockjs-node/info?t=1630194793128 net::ERR_CONNECTION_REFUSED&gt;
+        <p></p>
+        &lt;GET https://geocaching-b04b9.web.app:4200/sockjs-node/info?t=1630194793128 net::ERR_CONNECTION_REFUSED&gt;
+        <p></p>
+        &lt;GET https://geocaching-b04b9.web.app:4200/sockjs-node/info?t=1630194793128 net::ERR_CONNECTION_REFUSED&gt;
+        <p></p>
+        &lt;GET https://geocaching-b04b9.web.app:4200/sockjs-node/info?t=1630194793128 net::ERR_CONNECTION_REFUSED&gt;
+        <p></p>
+        &lt;&lt;Connection timeout&gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>

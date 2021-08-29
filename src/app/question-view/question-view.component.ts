@@ -1,10 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Actions, ofActionErrored, ofActionSuccessful, Select, Store} from "@ngxs/store";
-import {AdminAuthState} from "../shared/states/auth/login.state";
 import {Observable, Subject} from "rxjs";
-import {User} from "../shared/states/auth/entities/user";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {LoginAdmin} from "../shared/states/auth/login.action";
 import {first, takeUntil} from "rxjs/operators";
 import {Router} from "@angular/router";
 import {DeleteQuestion, GetNextLocation, GetNextQuestion} from "../shared/states/location/location.action";

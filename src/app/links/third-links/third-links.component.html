@@ -1,0 +1,80 @@
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!first"
+          aria-controls="collapseExample">
+    Access Page "RestaurantMenu.HTML"
+  </button>
+</p>
+<div #collapse="ngbCollapse"
+     [(ngbCollapse)]="first">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+      &lt;&lt;HTML 500 ERROR&gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapses.toggle()"
+          [attr.aria-expanded]="!second"
+          aria-controls="collapseExample">
+    Access file "Conversation.txt"
+  </button>
+</p>
+
+<div #collapses="ngbCollapse"
+     [(ngbCollapse)]="second">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      Fredrik: Hey James.
+      <p></p>
+      James: Whats up boss?
+      <p></p>
+      Fredrik: We might need to call a repair man. The noises in the walls are driving me insane.
+      <p></p>
+      James: Strange. I dont hear any noise. Are you sure you are okay ?
+      <p></p>
+      Fredrik: Stop arguing and call the repair crew.
+      <p></p>
+      James: Okay, will do.
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapsess.toggle()"
+          [attr.aria-expanded]="!third"
+          aria-controls="collapseExample">
+    Access file "RepairCrew.txt"
+  </button>
+</p>
+
+<div #collapsess="ngbCollapse"
+     [(ngbCollapse)]="third">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      Hello,
+      <p></p>
+      We are informing that we have checked out the <span class="font-italic-style">YouAreNotCrazyYouAreNotCrazy</span> as promised.
+      <p></p>
+      We did not really hear or seen anything related to <span class="font-italic-style">DoYouHearItsSirensTheyAllPlayForYou</span>
+      <p></p>
+      However, our technician did notice some pipe leakages in your basement.
+      <p></p>
+      Our advice is to call the plumber and <span class="font-italic-style">TheWaterIsSoftAndWeCanHelpYouForget</span>
+    </div>
+  </div>
+</div>

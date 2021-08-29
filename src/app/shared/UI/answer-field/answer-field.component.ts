@@ -52,6 +52,8 @@ export class AnswerFieldComponent implements OnInit {
   possibleCompletionSecretFrazes = [
     'Good choice =)',
     'I built this website. I can see you. =) - Nedas',
+    'Congrats for playing! Feel free to contact me if you need any help. - Nedas',
+    'This website was fun to build. Thanks for playing! Hope to see you later ! - Nedas',
     'You arent good at hiding - Oliver',
     'A curious answer - Danylo',
     'I thought we could trust you - Christian',
@@ -60,6 +62,8 @@ export class AnswerFieldComponent implements OnInit {
   ];
   possibleFailSecretFrazes = [
     'Good choice =)',
+    'Come on. I made the question easy for a reason. - Nedas',
+    'Sorry mates but this doesnt give you extra points. - Nedas',
     'The correct choice. But that does earn you points ;) - Nedas',
     'I knew you can be trusted - Oliver',
     'I knew you seemed bright when you first came here. - Danylo',

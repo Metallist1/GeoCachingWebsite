@@ -1,0 +1,80 @@
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!first"
+          aria-controls="collapseExample">
+    Access file "CSExamAnswers.txt"
+  </button>
+</p>
+<div #collapse="ngbCollapse"
+     [(ngbCollapse)]="first">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+        &lt;&lt;Insufficient permissions&gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapses.toggle()"
+          [attr.aria-expanded]="!second"
+          aria-controls="collapseExample">
+    Access file "Hello.txt"
+  </button>
+</p>
+
+<div #collapses="ngbCollapse"
+     [(ngbCollapse)]="second">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      <samp>
+        &lt;&lt;BasedSolutions team sends their regards!&gt;&gt;
+      <p></p>
+        &lt;&lt;Good luck, make great apps and have a
+        <a href="https://youtu.be/_0LKEyuTCX0" class="links text-align-left" target="_blank"> A Fun time !</a>
+        - Nedas, Martin, Martin and Abdi &gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapsess.toggle()"
+          [attr.aria-expanded]="!third"
+          aria-controls="collapseExample">
+    Access Message
+  </button>
+</p>
+
+<div #collapsess="ngbCollapse"
+     [(ngbCollapse)]="third">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      <samp>
+        &lt;&lt;Stream Corrupted&gt;&gt;
+        <p></p>
+      </samp>
+      <p></p>
+      17548@#!$@!-we are narrowing their location down to a local university network.
+      <p></p>
+      <p></p>
+      They will soon move locations. It might be our only chan-@$@!
+      <p></p>
+      <samp>
+        &lt;&lt;Stream Corrupted&gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>

@@ -475,3 +475,19 @@ main {
 ol.o{
   list-style-type: none !important;
 }
+
+.question-overflow{
+  max-height: 800px;
+  overflow: auto;
+}
+
+.links{
+  color: #b01;
+  text-decoration: none;
+  border: transparent;
+  background: transparent;
+}
+
+.text-align-left{
+  text-align: left;
+}

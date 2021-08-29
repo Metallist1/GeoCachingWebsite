@@ -39,4 +39,34 @@
   <p *ngIf="question != 9">
     {{nextLoc}}
   </p>
+
+  <p *ngIf="question != 9">
+    <strong>
+      Hacked Links:
+    </strong>
+  </p>
+  <p *ngIf="question == 1">
+    <app-first-links></app-first-links>
+  </p>
+  <p *ngIf="question == 2">
+    <app-second-links></app-second-links>
+  </p>
+  <p *ngIf="question == 3">
+    <app-third-links></app-third-links>
+  </p>
+  <p *ngIf="question == 4">
+    <app-forth-links></app-forth-links>
+  </p>
+  <p *ngIf="question == 5">
+    <app-fifth-links></app-fifth-links>
+  </p>
+  <p *ngIf="question == 6">
+    <app-six-links></app-six-links>
+  </p>
+  <p *ngIf="question == 7">
+    <app-seven-links></app-seven-links>
+  </p>
+  <p *ngIf="question == 8">
+    <app-eight-links></app-eight-links>
+  </p>
 </div>

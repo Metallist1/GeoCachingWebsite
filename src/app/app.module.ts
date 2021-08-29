@@ -28,6 +28,14 @@ import { TeamCreateComponent } from './team-create/team-create.component';
 import {LocationState} from "./shared/states/location/location.state";
 import { QuestionViewComponent } from './question-view/question-view.component';
 import { AnswerFieldComponent } from './shared/UI/answer-field/answer-field.component';
+import { FirstLinksComponent } from './links/first-links/first-links.component';
+import { SecondLinksComponent } from './links/second-links/second-links.component';
+import { ThirdLinksComponent } from './links/third-links/third-links.component';
+import { ForthLinksComponent } from './links/forth-links/forth-links.component';
+import { FifthLinksComponent } from './links/fifth-links/fifth-links.component';
+import { SixLinksComponent } from './links/six-links/six-links.component';
+import { SevenLinksComponent } from './links/seven-links/seven-links.component';
+import { EightLinksComponent } from './links/eight-links/eight-links.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +54,15 @@ import { AnswerFieldComponent } from './shared/UI/answer-field/answer-field.comp
     IntroComponent,
     TeamCreateComponent,
     QuestionViewComponent,
-    AnswerFieldComponent
+    AnswerFieldComponent,
+    FirstLinksComponent,
+    SecondLinksComponent,
+    ThirdLinksComponent,
+    ForthLinksComponent,
+    FifthLinksComponent,
+    SixLinksComponent,
+    SevenLinksComponent,
+    EightLinksComponent
   ],
   imports: [
     BrowserModule,

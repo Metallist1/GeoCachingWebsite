@@ -1,0 +1,54 @@
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!gfg"
+          aria-controls="collapseExample">
+    Access Conversation "Blue Arena Security"
+  </button>
+</p>
+<div #collapse="ngbCollapse"
+     [(ngbCollapse)]="gfg">
+  <div class="card">
+    <div class="card-body">
+      Hi Jasper,
+      <p></p>
+      I have noticed some unusual network activity over the weekend.
+      <p></p>
+      Probably nothing to worry about but we might need to change the passwords soon.
+      <p>
+        Could we have a meeting later today ?
+     </p>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <a href="https://youtu.be/fpicWwbRJxA" class="links text-align-left" target="_blank">Access file "NewMusic.mp3"</a>
+</p>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapses.toggle()"
+          [attr.aria-expanded]="!fh"
+          aria-controls="collapseExample">
+    Access file "BlueBlueArenaTaxes.txt"
+  </button>
+</p>
+
+<div #collapses="ngbCollapse"
+     [(ngbCollapse)]="fh">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+        &lt;&lt;Error. Connection interupted&gt;&gt;
+        <p></p>
+        &lt;&lt;Listen. We might be crazy enough to hack this place but taking on SKAT? No, thank you.&gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>

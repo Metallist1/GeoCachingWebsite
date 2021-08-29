@@ -1,0 +1,92 @@
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!first"
+          aria-controls="collapseExample">
+    Access List "Best single player games ever made" by Nedas
+  </button>
+</p>
+<div #collapse="ngbCollapse"
+     [(ngbCollapse)]="first">
+  <div class="card">
+    <div class="card-body">
+      <p></p>
+      Half life
+      <p></p>
+      Portal
+      <p></p>
+      Omori
+      <p></p>
+      Undertale
+      <p></p>
+      Katana Zero
+      <p></p>
+      Before your eyes
+      <p></p>
+      Everhood
+      <p></p>
+      Doom 2016 / Doom Eternal
+      <p></p>
+      Noita.
+      <p></p>
+      Crysis.
+      <p></p>
+      Halo.
+      <p></p>
+      Terraria.
+      <p></p>
+      Hotline miami
+      <p></p>
+      OneShot
+      <p></p>
+      Mass Effect
+      <p></p>
+      Night in the woods
+      <p></p>
+      ...
+      <p></p>
+      The list goes on and on.... Does this guy ever leave his apartment ?
+    </div>
+  </div>
+</div>
+
+<p>
+  <br/>
+  <button type="button"
+          class="links text-align-left"
+          (click)="collapses.toggle()"
+          [attr.aria-expanded]="!second"
+          aria-controls="collapseExample">
+    Access file "Password.txt"
+  </button>
+</p>
+
+<div #collapses="ngbCollapse"
+     [(ngbCollapse)]="second">
+  <div class="card">
+    <div class="card-body">
+      <samp>
+        &lt;&lt;Stream Corrupted&gt;&gt;
+        <p></p>
+        &lt;&lt;Stream Corrupted&gt;&gt;
+        <p></p>
+        &lt;&lt;Stream Corrupted&gt;&gt;
+        <p></p>
+        &lt;&lt;Stream Corrupted&gt;&gt;
+     </samp>
+      <p></p>
+      17548@#!$@!-hack their system. Its not hard. Their software is still fairly primitive.
+      <p></p>
+      I left a backdoor inside. You should use the password I gave you.
+      <p></p>
+      If you do somehow lose it, just check out the glic-@$@!
+      <p></p>
+      <samp>
+      &lt;&lt;Stream Corrupted&gt;&gt;
+      </samp>
+    </div>
+  </div>
+</div>
+
