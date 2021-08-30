@@ -2,10 +2,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapse.toggle()"
+          (click)="collapse.toggle();changeText('1')"
           [attr.aria-expanded]="!first"
           aria-controls="collapseExample">
-    Access file "CSExamAnswers.txt"
+    {{text1}} file "CSExamAnswers.txt"
   </button>
 </p>
 <div #collapse="ngbCollapse"
@@ -23,10 +23,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapses.toggle()"
+          (click)="collapses.toggle();changeText('2')"
           [attr.aria-expanded]="!second"
           aria-controls="collapseExample">
-    Access file "Hello.txt"
+    {{text2}} file "Hello.txt"
   </button>
 </p>
 
@@ -38,8 +38,8 @@
       <samp>
         &lt;&lt;BasedSolutions team sends their regards!&gt;&gt;
       <p></p>
-        &lt;&lt;Good luck, make great apps and have a
-        <a href="https://youtu.be/_0LKEyuTCX0" class="links text-align-left" target="_blank"> A Fun time !</a>
+        &lt;&lt;Good luck, make great apps and have
+        <a href="https://youtu.be/_0LKEyuTCX0" class="links text-align-left" target="_blank"> a Fun time !</a>
         - Nedas, Martin, Martin and Abdi &gt;&gt;
       </samp>
     </div>
@@ -50,10 +50,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapsess.toggle()"
+          (click)="collapsess.toggle();changeText('3')"
           [attr.aria-expanded]="!third"
           aria-controls="collapseExample">
-    Access Message
+    {{text3}}
   </button>
 </p>
 

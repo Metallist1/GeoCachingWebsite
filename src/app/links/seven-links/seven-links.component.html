@@ -1,22 +1,22 @@
 
 <p>
   <br/>
-  <a href="http://peal.io/download/l5vud" class="links text-align-left" target="_blank">Access file "TheSkyWasBlue.mp3"</a>
+  <a href="http://peal.io/download/l5vud" (click)="changeText('1')" class="links text-align-left" target="_blank">Access file "{{text1}}"</a>
 </p>
 
 <p>
   <br/>
-  <a href="http://peal.io/download/98jei" class="links text-align-left" target="_blank">Access file "AndYouWereJustGone.mp3"</a>
+  <a href="http://peal.io/download/98jei" (click)="changeText('2')" class="links text-align-left" target="_blank">Access file "{{text2}}"</a>
 </p>
 
 <p>
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapses.toggle()"
+          (click)="collapses.toggle();changeText('3')"
           [attr.aria-expanded]="!second"
           aria-controls="collapseExample">
-    Access file "TheThoughts.txt"
+    {{text3}} file "{{text3extra}}.txt"
   </button>
 </p>
 
@@ -60,10 +60,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapsess.toggle()"
+          (click)="collapsess.toggle();changeText('4')"
           [attr.aria-expanded]="!third"
           aria-controls="collapseExample">
-    Access file "ForgottenSoul.txt"
+    {{text4}} file "{{text4extra}}.txt"
   </button>
 </p>
 

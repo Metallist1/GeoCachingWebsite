@@ -2,10 +2,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapse.toggle()"
+          (click)="collapse.toggle();changeText('1')"
           [attr.aria-expanded]="!first"
           aria-controls="collapseExample">
-    Access List "Best single player games ever made" by Nedas
+    {{text1}} List "Best single player games ever made" by Nedas
   </button>
 </p>
 <div #collapse="ngbCollapse"
@@ -56,10 +56,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapses.toggle()"
+          (click)="collapses.toggle();changeText('2')"
           [attr.aria-expanded]="!second"
           aria-controls="collapseExample">
-    Access file "Password.txt"
+    {{text2}} file "Password.txt"
   </button>
 </p>
 

@@ -2,10 +2,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapse.toggle()"
+          (click)="collapse.toggle();changeText('1')"
           [attr.aria-expanded]="!first"
           aria-controls="collapseExample">
-    Access Page "RestaurantMenu.HTML"
+    {{text1}} Page "RestaurantMenu.HTML"
   </button>
 </p>
 <div #collapse="ngbCollapse"
@@ -23,10 +23,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapses.toggle()"
+          (click)="collapses.toggle();changeText('2')"
           [attr.aria-expanded]="!second"
           aria-controls="collapseExample">
-    Access file "Conversation.txt"
+    {{text2}} file "Conversation.txt"
   </button>
 </p>
 
@@ -54,10 +54,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapsess.toggle()"
+          (click)="collapsess.toggle();changeText('3')"
           [attr.aria-expanded]="!third"
           aria-controls="collapseExample">
-    Access file "RepairCrew.txt"
+    {{text3}} file "RepairCrew.txt"
   </button>
 </p>
 

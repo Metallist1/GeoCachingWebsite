@@ -2,10 +2,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapse.toggle()"
+          (click)="collapse.toggle(); changeButtonText('1')"
           [attr.aria-expanded]="!gfg"
           aria-controls="collapseExample">
-    Access Conversation "Blue Arena Security"
+    {{gfgText}} Conversation "Blue Arena Security"
   </button>
 </p>
 <div #collapse="ngbCollapse"
@@ -33,10 +33,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapses.toggle()"
+          (click)="collapses.toggle(); changeButtonText('2')"
           [attr.aria-expanded]="!fh"
           aria-controls="collapseExample">
-    Access file "BlueBlueArenaTaxes.txt"
+    {{fhText}} file "BlueBlueArenaTaxes.txt"
   </button>
 </p>
 

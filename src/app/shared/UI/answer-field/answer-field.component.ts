@@ -41,12 +41,18 @@ export class AnswerFieldComponent implements OnInit {
     'Are you sure ? Okay. Answer noted. Proceed to the next location.',
     '45 72 72 6f 72 2e 20 43 6f 6e 6e 65 63 74 69 6f 6e 20 69 6e 74 65 72 72 75 70 74 65 64 2e',
     'Understood. Proceed to the next location.',
+    '01010111 01101000 01101111 00100000 01101001 01110011 00100000 01110000 01110101 01101100 01101100 01101001 01101110 01100111 00100000 01111001 01101111 01110101 01110010 00100000 01110011 01110100 01110010 01101001 01101110 01100111 01110011 00100000 01110000 01110101 01110000 01110000 01100101 01110100 00111111',
     'Great. Nedas has noted down your answer. Proceed to the next location.',
     'That is an interesting answer... Continue.',
     'I dont think that is correct but proceed to the next location.',
     'Better and better. Go to the next location.',
+    'A great answer. You might have potential.',
+    'Do not let your guard down. Spies and outsiders are everywhere.',
+    'You put on quite the show. Not the best.... But it will do',
+    'Stop screwing around and move faster. They are on to you!',
+    'IamDrowningFasterAndFasterAndFasterAndFasterAndFasterItsSoColdHere',
     'One step closer to the end =). Move faster, dont keep us waiting.',
-    'Why are you doing this? How much are they paying yo!@!#!#@#Hfu-IzxGGuQ==',
+    'Why are you doing this? What do you have to gai-!@!#!#@#Hfu-IzxGGuQ==',
   ];
 
   possibleCompletionSecretFrazes = [

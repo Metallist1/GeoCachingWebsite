@@ -1,16 +1,16 @@
 <p>
   <br/>
-  <a href="http://scpfoundation.org/895/feed.html" class="links text-align-left" target="_blank">Access Live Feed Floor -10</a>
+  <a href="http://scpfoundation.org/895/feed.html" class="links text-align-left" target="_blank">Access Live Feed -10F</a>
 </p>
 
 <p>
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapse.toggle()"
+          (click)="collapse.toggle();changeText('1')"
           [attr.aria-expanded]="!first"
           aria-controls="collapseExample">
-    Access Automated Facility Message
+    {{text1}} Automated Facility Message
   </button>
 </p>
 <div #collapse="ngbCollapse"
@@ -32,10 +32,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapses.toggle()"
+          (click)="collapses.toggle();changeText('2')"
           [attr.aria-expanded]="!second"
           aria-controls="collapseExample">
-    Access file "WhatTheFuck.txt"
+    {{text2}} file "WhatTheFuck.txt"
   </button>
 </p>
 
@@ -59,10 +59,10 @@
   <br/>
   <button type="button"
           class="links text-align-left"
-          (click)="collapsess.toggle()"
+          (click)="collapsess.toggle();changeText('3')"
           [attr.aria-expanded]="!third"
           aria-controls="collapseExample">
-    Access Known Keter Entity Database
+    {{text3}}
   </button>
 </p>
 
